@@ -60,10 +60,10 @@ dependencies {
 }
 
 spigot {
-    authors 'aleiv'
-    apiVersion '1.17'
+    authors 'SSWrath'
+    apiVersion '1.16'
     version '0.1'
-    name 'CoreTemplate'
+    name 'Ninja'
     load STARTUP
     //depends = ['ProtocolLib']
 }
