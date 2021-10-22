@@ -5,19 +5,23 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class NinjaListener implements Listener {
-    
+
     @EventHandler
-    public void onShiftClick(PlayerInteractEvent e){
+    public void onShiftClick(PlayerInteractEvent e) {
         var ninja = Ninja.of(e.getPlayer());
-        if(ninja.isPlayerShiftClick(e)){
-            if(!ninja.isPlayerHidden()){
-               ninja.giveInvisibility();
-            }
-            else{
+        var player = e.getPlayer();
+        var inv = new SkillTree();
+       // if (ninja.isPlayerShiftClick(e)) {
+           // inv.open(player);
+            if (!ninja.isPlayerHidden()) {
+                ninja.giveInvisibility();
+                ninja.giveStrength();
+                ninja.giveSpeed();
+
+            } else {
                 ninja.removeInvisibility();
+                ninja.removeStrength();
             }
         }
     }
-
-    
 }

@@ -20,5 +20,6 @@ public class GlobalListener implements Listener{
         Bukkit.getScheduler().runTask(instance, () -> {
             
         });
-    }
+     }
+     
 }

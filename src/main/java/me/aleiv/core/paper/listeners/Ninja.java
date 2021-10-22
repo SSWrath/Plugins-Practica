@@ -14,6 +14,19 @@ import me.aleiv.core.paper.Core;
 public class Ninja {
     Player player;
 
+    public void removeStrength() {
+        player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
+        player.sendMessage(Core.getMiniMessage().parse("<rainbow>Ninja mode disable."));
+    }
+
+    public void giveSpeed() {
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0, false, false))
+    }
+
+    public void giveStrength() {
+        player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 0, false, false));
+    }
+
     public void removeInvisibility() {
         player.removePotionEffect(PotionEffectType.INVISIBILITY);
         player.sendMessage(Core.getMiniMessage().parse("<rainbow>Ninja mode disable."));
@@ -21,7 +34,7 @@ public class Ninja {
 
     public void giveInvisibility() {
         player.sendMessage(Core.getMiniMessage().parse("<rainbow>Ninja mode enabled."));
-        player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 9999 * 20, 0, false, false));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0, false, false));
     }
 
     public boolean isPlayerHidden() {
